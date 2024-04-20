@@ -11,6 +11,9 @@ public class GetScroll {
         // Not a scroll button
         if (scrollItem is null) return -1;
 
+        // Empty scroll
+        if (scrollItem.scrollId == 0) return -1;
+
         // Scroll decoration button (Tome of Fate scroll select)
         if (scrollItem.roleId != 0) return -1;
 

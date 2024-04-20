@@ -40,9 +40,10 @@ public class CustomizationPanelPatch
 	[HarmonyPostfix]
 	[HarmonyPatch(typeof(CustomizationPanel), "HandleOnProductPurchaseResult")]
 	public static void OnPurchasePostfix(CustomizationPanel __instance, ProductPurchaseResult result) {
-		if (result.Code == ResultCode.Eligible && result.Items.Find((ProductItem x) => x.ItemType == ItemTypeCategory.Scroll || x.ItemType == ItemTypeCategory.CursedScroll).ItemType > ItemTypeCategory.Undefined)
+		if (BuyScroll.IsScrollsPurchase(result))
 		{
-            AudioPlayer.PlaySound("Audio/UI/PurchaseSound.wav");
+            TransactionController.isTransactionRunningPurchase = false;
+			TransactionController.isTransactionStarted = false;
 			__instance.StartCoroutine(PanelRefresh(__instance));
 		}
 	}

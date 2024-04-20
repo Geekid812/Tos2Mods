@@ -14,8 +14,11 @@ public class BMG_ButtonPatch
 		{
 		    int scrollId = GetScroll.TryGetScrollIdFromButton(__instance.gameObject);
 			if (scrollId != -1) {
-				AudioPlayer.PlaySound("Audio/UI/ClickSound.wav");
-				BuyScroll.Buy(scrollId, 1);
+				if (TransactionController.HandleBuyClick(scrollId, __instance)) {
+					AudioPlayer.PlaySound("Audio/UI/ClickSound.wav");
+					ScrollFocusEffect.FocusScrollButton(__instance);
+					ScrollFocusEffect.UpdateTransactionQuantityCounter(__instance);
+				}
 			}
 		}
 	}
