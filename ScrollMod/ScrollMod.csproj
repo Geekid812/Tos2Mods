@@ -30,6 +30,7 @@
 
 	<ItemGroup>
 		<EmbeddedResource Include="res/scrollmod.modinfo.json"></EmbeddedResource>
+		<EmbeddedResource Include="res/thumbnail.png"></EmbeddedResource>
 	</ItemGroup>
 
 </Project>
