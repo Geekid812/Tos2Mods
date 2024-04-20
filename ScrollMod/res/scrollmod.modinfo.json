@@ -1,0 +1,11 @@
+{
+  "HarmonyId": "geekid.scrolls",
+  "DisplayName": "Enhanced Scrolls",
+  "Authors": [ "Geekid" ],
+  "Description": "Right click to buy more scrolls in the lobby!",
+  "Version": "1.0.0",
+  "Platforms": [ "Windows", "Mac", "Linux" ],
+  "RequiredMods": [],
+  "ConflictingMods": [],
+  "Settings": {}
+}
